@@ -18,6 +18,6 @@ void main() {
   });
 
   test('getPlatformVersion', () async {
-    expect(await OpenAppleMap.openMap, '42');
+    expect(await OpenAppleMap.platformVersion, '42');
   });
 }

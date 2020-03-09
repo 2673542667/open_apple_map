@@ -1,25 +1,25 @@
-#import "FlutterPlugin.h"
-#import <MapKit/MapKit.h>
+#import "OpenAppleMapPlugin.h"
 #import <CoreLocation/CoreLocation.h>
+#import <MapKit/MapKit.h>
 
-@implementation FlutterPlugin
-
+@implementation OpenAppleMapPlugin
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
   FlutterMethodChannel* channel = [FlutterMethodChannel
       methodChannelWithName:@"open_apple_map"
             binaryMessenger:[registrar messenger]];
-  FlutterPlugin* instance = [[FlutterPlugin alloc] init];
+  OpenAppleMapPlugin* instance = [[OpenAppleMapPlugin alloc] init];
   [registrar addMethodCallDelegate:instance channel:channel];
 }
 
 - (void)handleMethodCall:(FlutterMethodCall*)call result:(FlutterResult)result {
-  if([@"openMap" isEqualToString:call.method]) {
+  if ([@"getPlatformVersion" isEqualToString:call.method]) {
+    result([@"iOS " stringByAppendingString:[[UIDevice currentDevice] systemVersion]]);
+  } else if([@"openMap" isEqualToString:call.method]) {
     [self openMap:call result: result];
   } else {
     result(FlutterMethodNotImplemented);
   }
 }
-
 
 - (void)openMap:(FlutterMethodCall*)call result:(FlutterResult)result {
     NSDictionary* argsMap = call.arguments;

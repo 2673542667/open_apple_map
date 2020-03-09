@@ -1,0 +1,22 @@
+PODS:
+  - Flutter (1.0.0)
+  - open_apple_map (0.0.1):
+    - Flutter
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - open_apple_map (from `.symlinks/plugins/open_apple_map/ios`)
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  open_apple_map:
+    :path: ".symlinks/plugins/open_apple_map/ios"
+
+SPEC CHECKSUMS:
+  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+  open_apple_map: 6ef953fff823c91b9a7705a891185870b96d0d05
+
+PODFILE CHECKSUM: 3dbe063e9c90a5d7c9e4e76e70a821b9e2c1d271
+
+COCOAPODS: 1.8.3

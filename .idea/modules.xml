@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/open_apple_map.iml" filepath="$PROJECT_DIR$/open_apple_map.iml" />
-      <module fileurl="file://$PROJECT_DIR$/android/open_apple_map_android.iml" filepath="$PROJECT_DIR$/android/open_apple_map_android.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/android/open_apple_map_example_android.iml" filepath="$PROJECT_DIR$/example/android/open_apple_map_example_android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/open_apple_map.iml" filepath="$PROJECT_DIR$/.idea/open_apple_map.iml" />
     </modules>
   </component>
 </project>
