@@ -36,7 +36,7 @@
     MKMapItem * item = [[MKMapItem alloc]initWithPlacemark:placeMark];
 
     NSDictionary * dict = @{MKLaunchOptionsDirectionsModeKey:MKLaunchOptionsDirectionsModeWalking,MKLaunchOptionsMapTypeKey:
-    @(MKMapTypeSatellite),MKLaunchOptionsShowsTrafficKey:@(YES)};
+    @(MKMapTypeStandard),MKLaunchOptionsShowsTrafficKey:@(YES)};
 
     [MKMapItem openMapsWithItems:@[currentItem,item] launchOptions:dict];
 }
