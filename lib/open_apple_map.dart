@@ -11,8 +11,8 @@ class OpenAppleMap {
     return version;
   }
 
-  static Future<bool> openMap(log, lat, addressName) async {
-    final Map res = await _channel.invokeMethod('openMap', <String, dynamic>{'lat': lat, 'log': log, 'addressName': addressName});
+  static Future<bool> openMap(log, lat) async {
+    final Map res = await _channel.invokeMethod('openMap', <String, dynamic>{'lat': lat, 'log': log});
     bool isOpen = res['isOpen'];
     return isOpen;
   }
