@@ -48,7 +48,14 @@ class _MyAppState extends State<MyApp> {
           title: const Text('Plugin example app'),
         ),
         body: Center(
-          child: Text('Running on: $_platformVersion\n'),
+          child: FlatButton(
+            onPressed: () {
+              OpenAppleMap.openMap(30.533859, 104.068060, '测试地址');
+            },
+            child: Text(
+              '打开地图'
+            ),
+          ),
         ),
       ),
     );

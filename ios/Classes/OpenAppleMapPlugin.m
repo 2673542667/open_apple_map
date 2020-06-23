@@ -25,6 +25,7 @@
     NSDictionary* argsMap = call.arguments;
     NSString* lat = argsMap[@"lat"];
     NSString* log = argsMap[@"log"];
+    NSString* addressName = argsMap[@"addressName"];
 
     double latitude = [lat doubleValue];
     double longitude = [log doubleValue];
@@ -33,12 +34,18 @@
     MKPlacemark * placeMark = [[MKPlacemark alloc] initWithCoordinate:customLoc2D addressDictionary:nil];
 
     MKMapItem * currentItem = [MKMapItem mapItemForCurrentLocation];
-    MKMapItem * item = [[MKMapItem alloc]initWithPlacemark:placeMark];
+//    MKMapItem * item = [[MKMapItem alloc]initWithPlacemark:placeMark];
+    MKMapItem *toLocationItem = [[MKMapItem alloc] initWithPlacemark:[[MKPlacemark alloc] initWithCoordinate:customLoc2D addressDictionary:@{}]];
+    toLocationItem.name = addressName;
+    
+    [MKMapItem openMapsWithItems:@[currentItem, toLocationItem]
+                      launchOptions:@{MKLaunchOptionsDirectionsModeKey:
+                       MKLaunchOptionsDirectionsModeDriving,MKLaunchOptionsShowsTrafficKey: [NSNumber numberWithBool:YES]}];
 
-    NSDictionary * dict = @{MKLaunchOptionsDirectionsModeKey:MKLaunchOptionsDirectionsModeWalking,MKLaunchOptionsMapTypeKey:
-    @(MKMapTypeStandard),MKLaunchOptionsShowsTrafficKey:@(YES)};
-
-    [MKMapItem openMapsWithItems:@[currentItem,item] launchOptions:dict];
+//    NSDictionary * dict = @{MKLaunchOptionsDirectionsModeKey:MKLaunchOptionsDirectionsModeWalking,MKLaunchOptionsMapTypeKey:
+//    @(MKMapTypeStandard),MKLaunchOptionsShowsTrafficKey:@(YES)};
+//
+//    [MKMapItem openMapsWithItems:@[currentItem,item] launchOptions:dict];
 }
 
 @end
